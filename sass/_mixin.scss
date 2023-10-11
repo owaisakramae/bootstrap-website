@@ -1,0 +1,17 @@
+@mixin fade($timing, $animation-start) {
+  animation: fadeIn 2s;
+  animation-fill-mode: both;
+  animation-delay: $timing;
+  animation-play-state: running;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(-15%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

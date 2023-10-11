@@ -1,0 +1,86 @@
+@-webkit-keyframes fadeIn {
+  0% {
+    -webkit-transform: translateY(-15%);
+            transform: translateY(-15%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    -webkit-transform: translateY(-15%);
+            transform: translateY(-15%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+header .nav-bar-1 .nav-link.active::after,
+header .nav-bar-1 .nav-link:hover::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #000;
+}
+header .nav-bar-2 .nav-link {
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+header .nav-bar-2 .nav-link:hover {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+}
+header .navbar-before-scroll .nav-bar-2 .nav-link:hover {
+  color: #fff;
+}
+header .navbar-after-scroll .nav-bar-2 .nav-link:hover {
+  color: #4f4f4f;
+}
+header h2 {
+  -webkit-animation: fadeIn 2s;
+          animation: fadeIn 2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+header h1 {
+  -webkit-animation: fadeIn 2s;
+          animation: fadeIn 2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+header .head-ani-3 {
+  -webkit-animation: fadeIn 2s;
+          animation: fadeIn 2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.container section > :first-child .proj-card-1 {
+  -webkit-animation: fadeIn 2s;
+          animation: fadeIn 2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,40 @@
+@import "mixin";
+
+header {
+  .nav-bar-1 .nav-link.active::after,
+  .nav-bar-1 .nav-link:hover::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: #000;
+  }
+  .nav-bar-2 .nav-link {
+    transition: all 0.5s ease-in;
+  }
+  .nav-bar-2 .nav-link:hover {
+    transform: translateY(-4px);
+  }
+  .navbar-before-scroll .nav-bar-2 .nav-link:hover {
+    color: #fff;
+  }
+  .navbar-after-scroll .nav-bar-2 .nav-link:hover {
+    color: #4f4f4f;
+  }
+
+  h2 {
+    @include fade(200ms, "onLoad");
+  }
+  h1 {
+    @include fade(400ms, "onLoad");
+  }
+  .head-ani-3 {
+    @include fade(600ms, "onLoad");
+  }
+}
+.container {
+  section > :first-child {
+    .proj-card-1 {
+      @include fade(200ms, "onScroll");
+    }
+  }
+}
