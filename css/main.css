@@ -83,4 +83,21 @@ header .head-ani-3 {
           animation-delay: 200ms;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+}
+
+@media (max-width: 991.98px) {
+  header #home .home-left {
+    background: url(../img/web-design-2038872_1921.jpg);
+    background-size: cover;
+  }
+  header #home h1,
+  header #home h2,
+  header #home i {
+    color: #fff;
+  }
+}
+@media (max-width: 450px) {
+  header #home h1 {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=main.css.map */

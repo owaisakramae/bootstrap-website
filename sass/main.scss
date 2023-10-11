@@ -38,3 +38,28 @@ header {
     }
   }
 }
+
+@media (max-width: 991.98px) {
+  header {
+    #home {
+      .home-left {
+        background: url(../img/web-design-2038872_1921.jpg);
+        background-size: cover;
+      }
+      h1,
+      h2,
+      i {
+        color: #fff;
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  header {
+    #home {
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
+}
