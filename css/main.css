@@ -89,6 +89,7 @@ header .head-ani-3 {
   header #home .home-left {
     background: url(../img/web-design-2038872_1921.jpg);
     background-size: cover;
+    background-position: center;
   }
   header #home h1,
   header #home h2,
