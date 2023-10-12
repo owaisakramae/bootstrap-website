@@ -50,6 +50,7 @@ function darkTheme() {
 
   var btnText = document.querySelector(".btn-text");
   var icon = document.querySelector(".btn i");
+  var homeLeft = document.querySelector("#home .home-left");
 
   if (element.classList.contains("dark-mode")) {
     btnText.textContent = "Light Mode";

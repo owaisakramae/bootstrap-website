@@ -250,14 +250,9 @@ header .head-ani-3 {
     color: #4f4f4f !important;
   }
   header #home .home-left {
-    background: url(../img/web-design-2038872_1921.jpg);
+    background: url(../img/bg-new.png);
     background-size: cover;
-    background-position: center;
-  }
-  header #home h1,
-  header #home h2,
-  header #home i {
-    color: #fff;
+    background-position: center center;
   }
 }
 @media (max-width: 450px) {
