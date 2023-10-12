@@ -1,5 +1,6 @@
 @import "mixin";
 
+/* Active & Navbar Hover*/
 header {
   .nav-bar-1 .nav-link.active::after,
   .nav-bar-1 .nav-link:hover::after {
@@ -20,7 +21,7 @@ header {
   .navbar-after-scroll .nav-bar-2 .nav-link:hover {
     color: #4f4f4f;
   }
-
+  /*Transition*/
   h2 {
     @include fade(200ms, "onLoad");
   }
@@ -39,7 +40,135 @@ header {
   }
 }
 
+/* Color of the links BEFORE scroll */
+.navbar-before-scroll .nav-link,
+.navbar-before-scroll .navbar-toggler-icon {
+  color: #fff;
+}
+
+/* Color of the links AFTER scroll */
+.navbar-after-scroll .nav-link,
+.navbar-after-scroll .navbar-toggler-icon {
+  color: #4f4f4f;
+}
+/* Color of the navbar AFTER scroll */
+.navbar-after-scroll {
+  background-color: #fff;
+}
+/* Transition after scrolling */
+.navbar-after-scroll {
+  transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+/* Transition to the initial state */
+.navbar-before-scroll {
+  transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+/* An optional height of the navbar AFTER scroll */
+.navbar.navbar-before-scroll.navbar-after-scroll {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/*Backgrounds*/
+.background-filter {
+  background: hsla(0, 0%, 100%, 0.55);
+  backdrop-filter: blur(30px);
+}
+.background-filter-1 {
+  background-color: hsl(218, 62.2%, 95%);
+}
+.footer-background {
+  background-color: hsl(218, 62.2%, 95%);
+}
+/* Dark Mode*/
+.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+.dark-mode .card {
+  background-color: #333;
+}
+.dark-mode .card p {
+  color: #fff !important;
+}
+.dark-mode .form-control {
+  background-color: #222;
+  color: #fff;
+}
+.dark-mode .form-label {
+  color: #fff !important;
+}
+.dark-mode .navbar-nav .nav-link {
+  color: #fff !important;
+}
+.dark-mode .navbar-after-scroll {
+  background-color: #000;
+}
+.dark-mode .fa-github {
+  color: #fff !important;
+}
+.dark-mode .navbar-brand img {
+  filter: invert(1);
+}
+.dark-mode .background-filter {
+  background: #333;
+  backdrop-filter: none;
+}
+.dark-mode .background-filter-1 {
+  background-color: #333;
+}
+.dark-mode .text-dark {
+  color: #fff !important;
+}
+.dark-mode .text-muted {
+  color: #fff !important;
+}
+.dark-mode .modal-content {
+  background-color: #333;
+}
+.dark-mode .btn-primary,
+.dark-mode .btn-secondary {
+  background-color: #bab6b6;
+  color: #fff;
+  box-shadow: none;
+}
+.dark-mode .form-check-input[type="checkbox"]:checked {
+  background-color: #9f9f9f;
+  border-color: #6e6e6e;
+}
+.dark-mode .nav-bar-1 .nav-link.active::after,
+.dark-mode .nav-bar-1 .nav-link:hover::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #fafafa;
+}
+.dark-mode .fa-bars {
+  color: #fff !important;
+}
+.dark-mode .footer-background {
+  background-color: #4f4f4f;
+}
+
+/* Medai Quries*/
+@media (min-width: 992px) {
+  .rotate-lg {
+    transform: rotate(6deg);
+  }
+}
+/* Navbar on mobile */
 @media (max-width: 991.98px) {
+  #main-navbar {
+    background-color: #fff;
+  }
+  .dark-mode #main-navbar {
+    background-color: #333;
+  }
+
+  .nav-link,
+  .navbar-toggler-icon {
+    color: #4f4f4f !important;
+  }
   header {
     #home {
       .home-left {
@@ -55,6 +184,7 @@ header {
     }
   }
 }
+
 @media (max-width: 450px) {
   header {
     #home {

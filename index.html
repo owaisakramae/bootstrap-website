@@ -28,53 +28,6 @@
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <style>
-      /* Color of the links BEFORE scroll */
-      .navbar-before-scroll .nav-link,
-      .navbar-before-scroll .navbar-toggler-icon {
-        color: #fff;
-      }
-
-      /* Color of the links AFTER scroll */
-      .navbar-after-scroll .nav-link,
-      .navbar-after-scroll .navbar-toggler-icon {
-        color: #4f4f4f;
-      }
-      /* Color of the navbar AFTER scroll */
-      .navbar-after-scroll {
-        background-color: #fff;
-      }
-      /* Transition after scrolling */
-      .navbar-after-scroll {
-        transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-      }
-
-      /* Transition to the initial state */
-      .navbar-before-scroll {
-        transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-      }
-      /* An optional height of the navbar AFTER scroll */
-      .navbar.navbar-before-scroll.navbar-after-scroll {
-        padding-top: 5px;
-        padding-bottom: 5px;
-      }
-      /* Navbar on mobile */
-      @media (max-width: 991.98px) {
-        #main-navbar {
-          background-color: #fff;
-        }
-
-        .nav-link,
-        .navbar-toggler-icon {
-          color: #4f4f4f !important;
-        }
-      }
-      @media (min-width: 992px) {
-        .rotate-lg {
-          transform: rotate(6deg);
-        }
-      }
-    </style>
   </head>
   <body>
     <!--Main Navigation-->
@@ -197,10 +150,12 @@
                 />
                 <a
                   class="btn btn-primary btn-lg btn-rounded"
-                  href="#projects"
+                  onclick="darkTheme()"
                   role="button"
-                  >See my projects<i class="fas fa-angle-down ms-2"></i
-                ></a>
+                >
+                  <i class="fas fa-moon"></i>
+                  <span class="btn-text">Dark Mode</span>
+                </a>
               </div>
             </div>
             <!-- First column -->
@@ -1035,12 +990,8 @@
               <!-- First column -->
               <div class="col-lg-6 mb-5 mb-lg-0">
                 <div
-                  style="
-                    background: hsla(0, 0%, 100%, 0.55);
-                    backdrop-filter: blur(30px);
-                    z-index: 1;
-                  "
-                  class="card rounded-7 me-lg-n5"
+                  style="z-index: 1"
+                  class="background-filter card rounded-7 me-lg-n5"
                 >
                   <div class="card-body p-lg-5 shadow-5">
                     <h2 class="fw-bold">
@@ -1115,10 +1066,7 @@
               data-aos-once="true"
             >
               <div>
-                <div
-                  class="rounded-7 p-4 shadow-3"
-                  style="background-color: hsl(218, 62.2%, 95%)"
-                >
+                <div class="rounded-7 p-4 shadow-3 background-filter-1">
                   <p class="text-muted mt-4 mb-2">Project Manager at Spotify</p>
                   <p class="h5 mb-4 text-primary">Garry Lindman</p>
                   <hr class="hr hr-blurry" />
@@ -1148,10 +1096,7 @@
               data-aos-once="true"
             >
               <div>
-                <div
-                  class="rounded-7 p-4 shadow-3"
-                  style="background-color: hsl(218, 62.2%, 95%)"
-                >
+                <div class="rounded-7 p-4 shadow-3 background-filter-1">
                   <p class="text-muted mt-4 mb-2">CEO at Reddit</p>
                   <p class="h5 mb-4 text-primary">Lisa Montessori</p>
                   <hr class="hr hr-blurry" />
@@ -1181,10 +1126,7 @@
               data-aos-once="true"
             >
               <div>
-                <div
-                  class="rounded-7 p-4 shadow-3"
-                  style="background-color: hsl(218, 62.2%, 95%)"
-                >
+                <div class="rounded-7 p-4 shadow-3 background-filter-1">
                   <p class="text-muted mt-4 mb-2">
                     Senior Product Designer at Twitter
                   </p>
@@ -1216,12 +1158,8 @@
               <!-- Firt column -->
               <div class="col-lg-6 mb-5 mb-lg-0">
                 <div
-                  style="
-                    background: hsla(0, 0%, 100%, 0.55);
-                    backdrop-filter: blur(30px);
-                    z-index: 1;
-                  "
-                  class="card rounded-7 me-lg-n5"
+                  style="z-index: 1"
+                  class="card rounded-7 me-lg-n5 background-filter"
                 >
                   <div class="card-body p-lg-5 shadow-5">
                     <form>
@@ -1312,7 +1250,7 @@
     <!--Main layout-->
 
     <!--Footer-->
-    <footer class="text-center" style="background-color: hsl(218, 62.2%, 95%)">
+    <footer class="text-center footer-background">
       <div class="container py-4">
         <!-- Facebook -->
         <a
@@ -1384,56 +1322,6 @@
     <!--AOS Animation Script-->
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     <!-- Custom scripts -->
-    <script type="text/javascript">
-      const navbar = document.getElementById("main-navbar");
-
-      window.addEventListener("scroll", function () {
-        if (window.pageYOffset > 0) {
-          navbar.classList.add("navbar-after-scroll");
-        } else {
-          navbar.classList.remove("navbar-after-scroll");
-        }
-      });
-      AOS.init();
-      document.addEventListener("DOMContentLoaded", function () {
-        const navLinks = document.querySelectorAll(".nav-link");
-        const sections = document.querySelectorAll("section");
-
-        function isInViewport(element) {
-          const rect = element.getBoundingClientRect();
-          return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <=
-              (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <=
-              (window.innerWidth || document.documentElement.clientWidth)
-          );
-        }
-
-        function setActiveSection() {
-          let activeLink = null;
-
-          sections.forEach((section) => {
-            if (isInViewport(section) || section.offsetTop <= window.scrollY) {
-              activeLink = document.querySelector(
-                `.nav-link[href="#${section.id}"]`
-              );
-            }
-          });
-
-          navLinks.forEach((link) => {
-            if (link === activeLink) {
-              link.classList.add("active");
-            } else {
-              link.classList.remove("active");
-            }
-          });
-        }
-
-        window.addEventListener("scroll", setActiveSection);
-        setActiveSection();
-      });
-    </script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
